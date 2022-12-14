@@ -8,4 +8,9 @@ const OUTPUT_MESSAGE = {
 
 }
 
-module.exports = {INPUT_MESSAGE, OUTPUT_MESSAGE }
+const RANDOM_RANGE_NUMBER = {
+  minRangeInclusive : 1,
+  maxRangeInclusive : 9,
+}
+
+module.exports = {INPUT_MESSAGE, OUTPUT_MESSAGE, RANDOM_RANGE_NUMBER }
