@@ -1,5 +1,9 @@
 const SUCCESS = 3;
 
+const RETRY_OR_GAMEOVER ={
+  retry : 1,
+  gaemover : 0
+}
 const INPUT_MESSAGE = {
   inputThreeNumberMessage : "숫자를 입력해주세요 : ",
   optionNumberMessage : "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.\n"
@@ -7,7 +11,7 @@ const INPUT_MESSAGE = {
 
 const OUTPUT_MESSAGE = {
   gameStartGuideMessage : "숫자 야구 게임을 시작합니다.",
-  gameOverGuideMessage : "3개의 숫자를 모두 맞히셨습니다! 게임 종료\n"
+  gameOverGuideMessage : "3스트라이크\n3개의 숫자를 모두 맞히셨습니다! 게임 종료\n"
 
 }
 
@@ -23,4 +27,4 @@ const RESULT_MESSAGE = {
   nothing : `낫싱`
 }
 
-module.exports = {INPUT_MESSAGE, OUTPUT_MESSAGE, RANDOM_RANGE_NUMBER, RESULT_MESSAGE, SUCCESS }
+module.exports = {INPUT_MESSAGE, OUTPUT_MESSAGE, RANDOM_RANGE_NUMBER, RESULT_MESSAGE, SUCCESS, RETRY_OR_GAMEOVER }
