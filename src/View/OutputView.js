@@ -10,7 +10,7 @@ const OutputView = {
     if(strikeCount === 0 && ballCount === 0) Console.print(nothing)
     if(strikeCount === 3 && ballCount === 0 ) Console.print(gameOverGuideMessage)
     if(strikeCount === 3 && ballCount > 0) Console.print(ball(ballCount))
-    if(strikeCount < 3 && ballCount === 0) Console.print(strike(strikeCount))
+    if(strikeCount < 3 && strikeCount !== 0 && ballCount === 0) Console.print(strike(strikeCount))
     if(strikeCount > 0 && ballCount > 0) Console.print(strikeAndBall(strikeCount,ballCount))
     
   }
