@@ -6,6 +6,12 @@ const inputView = {
     Console.readLine(inputCarNameMessage,(car) => {
       carName(car.split(','))
     })
+  },
+
+  readTrial(trail) {
+    Console.readLine(inputTrialMessage, (number) => {
+      trail(parseInt(number,10))
+    })
   }
 
 }
