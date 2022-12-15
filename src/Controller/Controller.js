@@ -4,6 +4,7 @@ const { Console } = require("@woowacourse/mission-utils");
 const InputView = require("../View/InputView");
 const BaseballGame = require("../Model/BaseballGame");
 const { SUCCESS, RETRY_OR_GAMEOVER } = require("../Constant");
+const {isValidThreeNumber, isValidOptionNumber} = require("../Validation");
 
 
 class Controller {
@@ -20,7 +21,6 @@ class Controller {
   gameStart() {
       this.askUserThreeNumbers()
       this.getGameAnswer()
-      Console.print(this.#answer)
   }
 
   getGameAnswer() {
@@ -30,8 +30,10 @@ class Controller {
   askUserThreeNumbers() {
     InputView.readUserNumbers(this.getHintCount.bind(this))
   }
-
+  
   getHintCount(userThreeNumbers) {
+    isValidThreeNumber(userThreeNumbers);
+
     [this.strikeCount,this.ballCount] = 
     [this.baseballGame.matchStrike(userThreeNumbers,this.#answer),
     this.baseballGame.matchBall(userThreeNumbers,this.#answer)];
@@ -44,7 +46,7 @@ class Controller {
   }
 
   isSuccess() {
-    this.strikeCount === SUCCESS ?  this.askOptionNumber() :this.askUserThreeNumbers()
+    (this.strikeCount === SUCCESS) ?  this.askOptionNumber() :this.askUserThreeNumbers()
   }
 
   askOptionNumber() {
@@ -52,8 +54,9 @@ class Controller {
   }
 
   retryOrGameOver(option) {
-    if(option === RETRY_OR_GAMEOVER.retry ) this.gameStart()
-    this.gameOver()
+    isValidOptionNumber(option)
+    option === RETRY_OR_GAMEOVER.retry ? this.gameStart() : this.gameOver()
+    
   }
 
   gameOver() {

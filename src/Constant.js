@@ -1,5 +1,12 @@
 const SUCCESS = 3;
 
+const ERROR_MESSAGE = {
+  notNumber : "숫자만 입력하세요.",
+  notThreeNumber : "숫자 세개만 입력하세요",
+  notOneNumber : "숫자 하나만 입력하세요",
+  notUniqueNumber : "중복되지 않는 숫자를 입력하세요."
+}
+
 const RETRY_OR_GAMEOVER ={
   retry : 1,
   gaemover : 0
@@ -18,6 +25,7 @@ const OUTPUT_MESSAGE = {
 const RANDOM_RANGE_NUMBER = {
   minRangeInclusive : 1,
   maxRangeInclusive : 9,
+  numberSize : 3
 }
 
 const RESULT_MESSAGE = {
@@ -27,4 +35,4 @@ const RESULT_MESSAGE = {
   nothing : `낫싱`
 }
 
-module.exports = {INPUT_MESSAGE, OUTPUT_MESSAGE, RANDOM_RANGE_NUMBER, RESULT_MESSAGE, SUCCESS, RETRY_OR_GAMEOVER }
+module.exports = {INPUT_MESSAGE, OUTPUT_MESSAGE, RANDOM_RANGE_NUMBER, RESULT_MESSAGE, SUCCESS, RETRY_OR_GAMEOVER, ERROR_MESSAGE  }
