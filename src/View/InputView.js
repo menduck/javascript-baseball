@@ -1,7 +1,8 @@
 const {Console} = require("@woowacourse/mission-utils");
+
 const { INPUT_MESSAGE : {inputCarNameMessage, inputTrialMessage} } = require("../Constant");
 
-const inputView = {
+const InputView = {
   readCarName(carName) {
     Console.readLine(inputCarNameMessage,(car) => {
       carName(car.split(','))
@@ -16,4 +17,4 @@ const inputView = {
 
 }
 
-module.export = inputView;
+module.exports = InputView;
