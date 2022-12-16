@@ -6,8 +6,14 @@ const InputView = {
     Console.readLine(INPUT_MESSAGE.inputCarUsersName, (CarName) =>{
       carUsersName(CarName.split(','));
     } )
+  },
+
+  readGameTrial(trialNumber) {
+    Console.readLine(INPUT_MESSAGE.inputTrialNumber, (number) => {
+      trialNumber(parseInt(number,10))
+    })
   }
-  
+
 
 };
 
