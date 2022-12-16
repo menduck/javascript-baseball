@@ -61,7 +61,12 @@ class Controller {
       this.isMove()
       this.trialNumber--
     }
+    this.printWinner()
+  }
 
+  printWinner() {
+    OutputView.printWinnerCar(this.carGame.findWinner())
+    Console.close();
   }
 }
 

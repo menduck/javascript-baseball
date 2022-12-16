@@ -9,6 +9,10 @@ const OutputView = {
 
   PrintResult([user,count]) {
     Console.print(OUTPUT_MESSAGE.resultMessage(user,count));
+  },
+
+  printWinnerCar(winner) {
+    Console.print(OUTPUT_MESSAGE.winnerMessage(winner))
   }
   
 };

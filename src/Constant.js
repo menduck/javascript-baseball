@@ -12,8 +12,9 @@ const RANDOM_RANGE_NUMBER = {
 }
 const OUTPUT_MESSAGE = {
   resultMessage : (user,count) => `${user}: ${('-').repeat(count)}`,
+  gameOverMessage : '\n결과\n',
+  winnerMessage : (winnerCar) => `최종 우승자: ${winnerCar}`
 
-  gameOverMessage : '\n결과\n'
 }
 
 const ERROR_MESSAGE = {}
