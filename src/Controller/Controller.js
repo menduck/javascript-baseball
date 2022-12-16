@@ -1,8 +1,12 @@
+const CarGame = require("../Model/carGame");
 const InputView = require("../View/InputView");
+const { Console } = require("@woowacourse/mission-utils");
+const RandomGenerator = require("../utils/RandomGenerator");
+const OutputView = require("../View/OutputView");
 
 class Controller {
-  constructor(){
-
+  constructor() {
+    this.carGame = new CarGame();
   }
   /*
   saveInput(넘겨받는인풋값){
@@ -15,22 +19,50 @@ class Controller {
     }
   } */
   askInputCarUsersName() {
-    InputView.readCarUsersName(this.saveCarUsersName.bind(this))
+    InputView.readCarUsersName(this.saveCarUsersName.bind(this));
   }
   saveCarUsersName(userNameArr) {
-    this.userNameArr = userNameArr
-    this.askInputGameTrial()
+    this.userNameArr = userNameArr;
+    this.askInputGameTrial();
   }
 
   askInputGameTrial() {
     InputView.readGameTrial(this.saveGameTrial.bind(this));
   }
   saveGameTrial(trialNumber) {
-    this.trialNumber = trialNumber
+    this.trialNumber = trialNumber;
+    this.setCarInfo();
+  }
+  setCarInfo() {
+    this.carGame.carInfo(this.userNameArr);
+    this.printGameOver()
   }
 
+  printGameOver() {
+    OutputView.printGameOverGuide();
+    this.repeatTrial()
+  }
 
-  
+  isMove() {
+    this.carGame.randomNumberOfcarUser(this.userNameArr,RandomGenerator.generate);
+    this.countOfUsers = this.carGame.move()
+    this.printResult()
+  }
+
+  printResult(){
+    Object.entries(this.countOfUsers).filter((countOfUser) => OutputView.PrintResult(countOfUser))
+
+    Console.print('\n')
+    }
+
+  repeatTrial(){
+    this.isMove()
+    while(this.trialNumber>0) {
+      this.isMove()
+      this.trialNumber--
+    }
+
+  }
 }
 
 module.exports = Controller;
