@@ -22,6 +22,14 @@ class CarGame {
       if(this.randomNumberOfUsers[key] >= CAR_MOVE_MIN_INCLUSIVE) this.#userGoCount[key]++
     } return this.#userGoCount
   }
+
+  findWinner() {
+  const winnerMaxNumber =  Math.max(...Object.values(this.#userGoCount));
+  const winner = [];
+  for(let car in this.#userGoCount) {
+    if(this.#userGoCount[car] === winnerMaxNumber) winner.push(car) 
+  } return winner.join(', ')
+  }
 }
 
 module.exports = CarGame;
