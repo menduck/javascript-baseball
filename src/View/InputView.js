@@ -3,8 +3,8 @@ const { INPUT_MESSAGE } = require("../Constant");
 
 const InputView = {
   readCarUsersName(carUsersName) {
-    Console.readLine(INPUT_MESSAGE.inputCarUsersName, (CarName) =>{
-      carUsersName(CarName.split(','));
+    Console.readLine(INPUT_MESSAGE.inputCarUsersName, (carName) =>{
+      carUsersName(carName.split(','));
     } )
   },
 
