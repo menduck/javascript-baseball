@@ -3,7 +3,11 @@ const { INPUT_MESSAGE : {carNamesMessage, trialMessage} } = require("../util/Con
 const InputView = {
   readCarUsers(carusers) {
     Console.readLine(carNamesMessage,(users) => carusers((users.split(','))))
-  } 
+  },
+
+  readGameTrial(gameTrial) {
+    Console.readLine(trialMessage,(number)=> gameTrial(parseInt(number,10)))
+  }
 }
 
 module.exports = InputView
