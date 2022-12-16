@@ -8,5 +8,10 @@
     gameTitle : "자동차 경주 게임",
   }
 
+  const RANDOM_RANGE = {
+    minRangeInclusive : 0,
+    maxRangeInclusive : 9,
+  }
 
-module.exports = {INPUT_MESSAGE, OUTPUT_MESSAGE};
+
+module.exports = {INPUT_MESSAGE, OUTPUT_MESSAGE, RANDOM_RANGE};
