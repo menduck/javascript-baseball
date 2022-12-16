@@ -17,9 +17,10 @@ model
 utils
 - [0] 랜덤한 숫자(1~9)를 반환해 주는 기능 구현 => RandomGenerator.js
 
-vaildation
+vaildation => controller에서 catch해야함
 - [0] 자동차 이름 유효성 검사
   - [0] 자동차 이름은 5자 이하만 가능하다.
+  - [0] 자동차의 이름은 서로 중복되면 안된다.
 - [0] 시도할 횟수 유효성 검사
   -[0]  숫자만 가능
 
