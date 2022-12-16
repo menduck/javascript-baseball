@@ -4,5 +4,9 @@
     trialMessage : "시도할 횟수를 입력해주세요"
   }
 
+  const OUTPUT_MESSAGE = {
+    gameTitle : "자동차 경주 게임",
+  }
 
-module.exports = {INPUT_MESSAGE};
+
+module.exports = {INPUT_MESSAGE, OUTPUT_MESSAGE};
