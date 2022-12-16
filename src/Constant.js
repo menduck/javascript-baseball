@@ -3,6 +3,11 @@ const INPUT_MESSAGE = {
   inputTrialNumber : "\n시도할 횟수를 입력하세요.\n"
 
 }
+
+const RANDOM_RANGE_NUMBER = {
+  minRangeInclusive : 0,
+  maxRangeInclusive : 9,
+}
 const OUTPUT_MESSAGE = {}
 
 const ERROR_MESSAGE = {}
@@ -13,4 +18,4 @@ const RESULT = {
   resultMap : (user,count) => `${user} ${count}`
 }
 
-module.exports = {INPUT_MESSAGE,OUTPUT_MESSAGE,ERROR_MESSAGE}
+module.exports = {RANDOM_RANGE_NUMBER, INPUT_MESSAGE,OUTPUT_MESSAGE,ERROR_MESSAGE}
