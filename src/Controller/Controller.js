@@ -9,22 +9,13 @@ class Controller {
   constructor() {
     this.carGame = new CarGame();
   }
-  /*
-  saveInput(넘겨받는인풋값){
-    try{
-      validation.input(넘겨받는인풋값);
-      this.저장할인풋 = 넘겨받는인풋값;
-      this.그다음단계호출
-    } catch {
-      // 다시 인풋값 받기
-    }
-  } */
+
   askInputCarUsersName() {
     InputView.readCarUsersName(this.saveCarUsersName.bind(this));
   }
   saveCarUsersName(userNameArr) {
     try {
-      Validation.isVaildCarName(userNameArr)
+      Validation.isVaildCarName(userNameArr);
       this.userNameArr = userNameArr;
       this.askInputGameTrial();
     } catch {
@@ -36,7 +27,7 @@ class Controller {
     InputView.readGameTrial(this.saveGameTrial.bind(this));
   }
   saveGameTrial(trialNumber) {
-    try{
+    try {
       Validation.isValidTrialNumber(trialNumber);
       this.trialNumber = trialNumber;
       this.setCarInfo();
@@ -44,39 +35,45 @@ class Controller {
       this.askInputGameTrial();
     }
   }
+  
   setCarInfo() {
     this.carGame.carInfo(this.userNameArr);
-    this.printGameOver()
+    this.printGameOver();
   }
 
   printGameOver() {
     OutputView.printGameOverGuide();
-    this.repeatTrial()
+    this.repeatTrial();
   }
 
   isMove() {
-    this.carGame.randomNumberOfcarUser(this.userNameArr,RandomGenerator.generate);
-    this.countOfUsers = this.carGame.move()
-    this.printResult()
+    this.carGame.randomNumberOfcarUser(
+      this.userNameArr,
+      RandomGenerator.generate
+    );
+    this.countOfUsers = this.carGame.move();
+    this.printResult();
   }
 
-  printResult(){
-    Object.entries(this.countOfUsers).filter((countOfUser) => OutputView.PrintResult(countOfUser))
+  printResult() {
+    Object.entries(this.countOfUsers).filter((countOfUser) =>
+      OutputView.PrintResult(countOfUser)
+    );
 
-    Console.print('\n')
-    }
+    Console.print("\n");
+  }
 
-  repeatTrial(){
-    this.isMove()
-    while(this.trialNumber>0) {
-      this.isMove()
-      this.trialNumber--
+  repeatTrial() {
+    this.isMove();
+    while (this.trialNumber > 0) {
+      this.isMove();
+      this.trialNumber--;
     }
-    this.printWinner()
+    this.printWinner();
   }
 
   printWinner() {
-    OutputView.printWinnerCar(this.carGame.findWinner())
+    OutputView.printWinnerCar(this.carGame.findWinner());
     Console.close();
   }
 }

@@ -13,8 +13,6 @@ const InputView = {
       trialNumber(parseInt(number,10))
     })
   }
-
-
 };
 
 module.exports = InputView;

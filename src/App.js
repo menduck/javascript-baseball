@@ -5,7 +5,7 @@ class App {
     this.controller = new Controller
   }
   play() {
-    this.controller.gameStart();
+    this.controller.askInputCarUsersName();
   }
 }
 
