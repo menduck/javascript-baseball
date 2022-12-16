@@ -7,8 +7,8 @@ const RandomGenerator = {
   generate() {
     return Random.pickNumberInRange(
       minRangeInclusive, 
-      maxRangeInclusive);
-  };
+      maxRangeInclusive)
+  }
 };
 
 module.exports = RandomGenerator;
