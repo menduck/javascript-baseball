@@ -3,6 +3,7 @@ const InputView = require("../View/InputView");
 const { Console } = require("@woowacourse/mission-utils");
 const RandomGenerator = require("../utils/RandomGenerator");
 const OutputView = require("../View/OutputView");
+const Validation = require("../Validation");
 
 class Controller {
   constructor() {
@@ -22,16 +23,26 @@ class Controller {
     InputView.readCarUsersName(this.saveCarUsersName.bind(this));
   }
   saveCarUsersName(userNameArr) {
-    this.userNameArr = userNameArr;
-    this.askInputGameTrial();
+    try {
+      Validation.isVaildCarName(userNameArr)
+      this.userNameArr = userNameArr;
+      this.askInputGameTrial();
+    } catch {
+      this.askInputCarUsersName();
+    }
   }
 
   askInputGameTrial() {
     InputView.readGameTrial(this.saveGameTrial.bind(this));
   }
   saveGameTrial(trialNumber) {
-    this.trialNumber = trialNumber;
-    this.setCarInfo();
+    try{
+      Validation.isValidTrialNumber(trialNumber);
+      this.trialNumber = trialNumber;
+      this.setCarInfo();
+    } catch {
+      this.askInputGameTrial();
+    }
   }
   setCarInfo() {
     this.carGame.carInfo(this.userNameArr);
