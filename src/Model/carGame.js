@@ -1,3 +1,5 @@
+const { CAR_MOVE_MIN_INCLUSIVE } = require("../Constant");
+
 class CarGame {
   #userGoCount
   constructor() {
@@ -17,7 +19,7 @@ class CarGame {
 
   move() {
     for(let key in this.randomNumberOfUsers) {
-      if(this.randomNumberOfUsers[key] >=4) this.#userGoCount[key]++
+      if(this.randomNumberOfUsers[key] >= CAR_MOVE_MIN_INCLUSIVE) this.#userGoCount[key]++
     } return this.#userGoCount
   }
 }

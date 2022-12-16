@@ -4,6 +4,8 @@ const INPUT_MESSAGE = {
 
 }
 
+const CAR_MOVE_MIN_INCLUSIVE = 4;
+
 const RANDOM_RANGE_NUMBER = {
   minRangeInclusive : 0,
   maxRangeInclusive : 9,
@@ -18,4 +20,4 @@ const RESULT = {
   resultMap : (user,count) => `${user} ${count}`
 }
 
-module.exports = {RANDOM_RANGE_NUMBER, INPUT_MESSAGE,OUTPUT_MESSAGE,ERROR_MESSAGE}
+module.exports = {CAR_MOVE_MIN_INCLUSIVE, RANDOM_RANGE_NUMBER, INPUT_MESSAGE,OUTPUT_MESSAGE,ERROR_MESSAGE}
